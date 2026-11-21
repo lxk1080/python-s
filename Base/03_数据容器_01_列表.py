@@ -8,7 +8,7 @@
 # arr = [1, 2, 3, 4, 5, 6, 'A', True]
 
 # 获取
-# print(arr[0], arr[-1], len(arr))
+# print(arr[0], arr[-1])
 
 # 修改赋值
 # arr[5] = 8
@@ -63,3 +63,9 @@
 # print(arr)
 # arr.reverse()
 # print(arr)
+
+""" 列表常用函数 """
+
+arr = [1, 2, 3, 4]
+print(len(arr))
+print(sum(arr))
