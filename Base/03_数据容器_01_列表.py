@@ -103,3 +103,14 @@
 # print(arr)
 # arr2 = [i**2 for i in range(1, 11) if i % 2 == 0] # 让数字 1~10 中的偶数的平方组成一个列表
 # print(arr2)
+
+"""
+获取列表中元素的索引：
+  - list.index(item) 返回第一个匹配项的索引
+  - 通过 enumerate(list) 可以 for i,v 遍历，i 是索引，v 是元素值
+"""
+
+# arr = ['a', 'b', 'c', 'd', 'c']
+
+# print(arr.index('c')) # 第一个匹配项的索引
+# print([i for i, v in enumerate(arr) if v == 'c']) # 所有匹配项的索引
