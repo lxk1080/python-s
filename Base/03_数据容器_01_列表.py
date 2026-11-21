@@ -2,7 +2,7 @@
 """
 列表：对应 js 的数组
   - 提供反向索引，-1、-2 从后往前数，js 中没有这个功能
-  - 不能给一个不存在的索引赋值，js 中可以
+  - 注意：不能给一个不存在的索引赋值，js 中可以
 """
 
 # arr = [1, 2, 3, 4, 5, 6, 'A', True]
@@ -64,8 +64,42 @@
 # arr.reverse()
 # print(arr)
 
-""" 列表常用函数 """
+""" 常用函数 """
 
-arr = [1, 2, 3, 4]
-print(len(arr))
-print(sum(arr))
+# arr = [1, 2, 3, 4]
+
+# print('长度', len(arr))
+# print('求和', sum(arr))
+# print('最小', min(arr))
+# print('最大', max(arr))
+
+""" 去重：可以使用 item in list 判断列表中是否包含这个元素 """
+
+# arr = [1, 2, 2, 3, 3, 3, 4, 5, 5]
+# list = []
+# for item in arr:
+#     if item not in list:
+#         list.append(item)
+# print(list)
+
+"""
+列表合并：
+  - 解包：将列表中的元素解开成一个个独立的元素，用 * 号表示，就等同于 js 的三点 ... 扩展运算符
+  - 相加：直接将两个列表相加，也可以合并
+"""
+
+# arr1 = [1, 2, 3, 4, 5]
+# arr2 = [6, 7, 8, 9, 10]
+# arr3 = [*arr1, *arr2]
+# arr4 = arr1 + arr2
+# print(arr3)
+# print(arr4)
+
+"""
+列表推导式：按照一定的规则快速生成一个列表，语法：[要插入列表的数据 for i in 列表 if 条件]
+"""
+
+# arr = [i**2 for i in range(1, 11)] # 让数字 1~10 的平方组成一个列表
+# print(arr)
+# arr2 = [i**2 for i in range(1, 11) if i % 2 == 0] # 让数字 1~10 中的偶数的平方组成一个列表
+# print(arr2)
