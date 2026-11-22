@@ -22,6 +22,7 @@
 """
 常用方法：
   - find()，在字符串中查找子串，返回第一次出现的索引位置，找不到返回 -1，s.find('Python')
+    - 注意：只有字符串在找不到时会返回 -1，像列表、元组找不到会直接报错
   - count()，统计子串在字符串中出现的次数，s.count('H')
   - upper()，将字符串中的所有字母转换为大写，s.upper()
   - lower()，将字符串中的所有字母转换为小写，s.lower()
@@ -33,5 +34,7 @@
 """
 
 # str = 'hello'
+# print(str.find('l'))
+# print(str.find('t'))
 # print(str.startswith('h'))
 # print(str.endswith('o'))

@@ -91,6 +91,16 @@
 #         list.append(item)
 # print(list)
 
+""" 解包：符号 * 和 js 的扩展运算符 ... 一样 """
+
+# arr = [1, 2, 3, 4, 5]
+
+# a,b,c,d,e = arr
+# print(a,b,c,d,e)
+
+# a,*b,c = arr
+# print(a,b,c)
+
 """
 列表合并：
   - 解包：将列表中的元素解开成一个个独立的元素，用 * 号表示，就等同于 js 的三点 ... 扩展运算符
@@ -115,7 +125,7 @@
 
 """
 获取列表中元素的索引：
-  - list.index(item) 返回第一个匹配项的索引
+  - list.index(item) 返回第一个匹配项的索引，注意：如果找不到会报错，所以找之前最好先判断元素是否在列表里
   - 通过 enumerate(list) 可以 for i,v 遍历，i 是索引，v 是元素值
 """
 
@@ -123,3 +133,9 @@
 
 # print(arr.index('c')) # 第一个匹配项的索引
 # print([i for i, v in enumerate(arr) if v == 'c']) # 所有匹配项的索引
+
+# 因为元素不在列表里，所以会报错
+# print(arr.index('t'))
+
+# 先判断是否在列表里，再获取索引
+# print('t' in arr and arr.index('t'))
