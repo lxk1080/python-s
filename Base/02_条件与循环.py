@@ -10,6 +10,11 @@
 # else:
 #     print(f'{num} 是零')
 
+""" 三元运算符，语法：True_value if 条件 else False_value """
+
+# num = 11
+# print('大于10' if num >= 10 else '小于10')
+
 """
 match...case 等同于 switch...case，只在 python3.10 后支持
   - 注意几个地方：
