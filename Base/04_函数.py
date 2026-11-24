@@ -55,7 +55,6 @@ def calc_score(list):
 
 """
 函数作用域：
-  - 函数内不能再定义函数，所以 python 不存在和 js 一样的闭包
   - 作用域：函数内部可以获取全局变量，但函数内部无法直接修改全局变量，函数内部所有的变量定义都是独立于函数体内的，与外部无关
     - 如果是 js，则会改变外部的变量值：let a = 1; function change() { a = 100 }; change(); console.log(a); 此时 a 的值会变为 100
     - 如果 js 要想内部和外部无关，则需严格定义：let a = 1; function change() { let a = 100 }; change(); console.log(a); 内部定义使用 let 即可
@@ -96,7 +95,7 @@ def func4():
   - 位置传参
   - 关键字传参
   - 默认参数
-    - 默认参数必须要放到非默认参数后
+    - 默认参数必须要放到非默认参数之后
   - 不定长参数
     - 位置传参：*args，args 是元组
     - 关键字传参：**kwargs，kwargs 是字典
@@ -146,9 +145,44 @@ def func_b(x, y, func): return func(x, y)
 # print(func_b(2, 3, func_a))
 
 """
-匿名函数：
+匿名函数：相当于 js 的箭头函数
   - 没有名称的函数，需要通过 lambda 表达式来声明函数，可以简化简单函数的编写（单行表达式）
     - 不能换行，只能写单行，语法：lambda 参数 : 函数体
+  - 比 js 的箭头函数还是差点意思，lambda 追求简洁，只能单行，不能写 return
+    - 而 js 箭头函数写了大括号 {} 的话，还是可以写多行，写 return 的，在 js 中箭头函数往往会替代 function 使用
 """
 
-lambda x, y : x + y
+# 和箭头函数一样的定义方式
+getnum = lambda : 10
+add = lambda x, y : x + y
+
+# 闭包
+def whatever():
+    a = 10
+    return lambda b : a + b
+
+# what = whatever()
+# print(what(10), what(20))
+
+data = ['PHP', 'C', 'Python', 'Java', 'Javascript', 'Go']
+
+# 作为回调函数使用，根据字符串长度排序
+# 这个排序和 js 的排序还是有点不同的，这里可以理解为：先排数字，然后将数字替换为对应的字符串，就是一个映射关系
+data.sort(key= lambda item : len(item))
+# print(data)
+
+# 由于 key 接收一个回调函数，所以也可以直接这么写
+# sort 方法还可以设置是否反转参数
+data.sort(key=len, reverse=True)
+# print(data)
+
+"""
+案例练习：阶乘
+  - 使用递归即可，属于动态规划算法
+"""
+
+def jiechen(num):
+    if num <= 1: return num
+    return num * jiechen(num - 1)
+
+# print(jiechen(3))
