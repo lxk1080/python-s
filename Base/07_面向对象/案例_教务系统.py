@@ -91,22 +91,28 @@ class EduManagement:
             print('--------------------------------------------------------------------------------------')
 
             operation = int(input('请输入操作：'))
-            match operation:
-                case 1:
-                    self.add_student()
-                case 2:
-                    self.update_student()
-                case 3:
-                    self.query_student()
-                case 4:
-                    self.query_all_student()
-                case 5:
-                    self.remove_student()
-                case 6:
-                    print('再见~')
-                    break
-                case _:
-                    print('输入的指令不正确，请重新输入！')
+
+            try:
+                match operation:
+                    case 1:
+                        self.add_student()
+                    case 2:
+                        self.update_student()
+                    case 3:
+                        self.query_student()
+                    case 4:
+                        self.query_all_student()
+                    case 5:
+                        self.remove_student()
+                    case 6:
+                        print('再见~')
+                        break
+                    case _:
+                        print('输入的指令不正确，请重新输入！')
+            except ValueError:
+                print('输入的数据有问题，请重新选择！')
+            except Exception:
+                print('程序运行出错了，请重新选择~')
 
 """ 运行代码 """
 
