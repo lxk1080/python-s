@@ -32,6 +32,12 @@ ollama 官网地址：https://ollama.com/
 
 `OLLAMA_MODELS=你想要保存下载的模型的目录`，比如：`OLLAMA_MODELS=D:\OllamaDir\models`
 
+3）替换国内镜像（这一步可选）
+
+Ollama 默认从境外官方仓库拉取模型文件，国内直连链路不稳定、带宽低、容易丢包，关键是网速很慢（随着下载时间，下载速度会越来越慢）
+
+所以我们需要替换为国内镜像源，新建环境变量：`OLLAMA_MODEL_SERVER=https://mirror.ollama.com`
+
 ##### 1.2 下载模型
 
 直接去 ollama 的官网找模型，里面有安装的命令，例如：`ollama run deepseek-r1:8b`，直接复制到命令行，会自动下载模型
