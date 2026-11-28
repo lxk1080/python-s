@@ -6,6 +6,25 @@
 
 通过虚拟的运行环境 `.venv`，可以保证每一个 Python 项目都在一个相对独立、隔离的运行环境中运行，项目间互不影响
 
+**激活虚拟环境：**
+
+命令行输入 `.venv\Scripts\Activate.ps1`（windows）执行，不过一般不用手动激活，IDE 会自动帮你激活
+
+虚拟环境激活之后，命令行中的 python、pip 命令就是虚拟环境内的，可以通过以下命令查看：
+
+```sh
+python -c 'import sys; print(sys.executable)'
+pip -V
+```
+
+**安装包：**
+
+安装软件包（最新版本）：`pip install openai`
+安装软件包（指定版本）：`pip install openai==2.13.0`
+卸载软件包：`pip uninstall openai`
+列出已安装的包：`pip list`
+查看包详情：`pip show openai`
+
 ### 二、高级
 
 ### 三、AI应用
@@ -49,3 +68,9 @@ Ollama 默认从境外官方仓库拉取模型文件，国内直连链路不稳�
 满血版的模型就不用想了，下图中 671b 的模型，大概需要 8 张 H200 才能跑的动
 
 <img src='./pictures/01.jpeg' width='60%' alt='picture'>
+
+### 十、其它
+
+#### 1. streamlit
+
+Streamlit 是一个用于快速基于 python 代码构建 web 网页的 python 库（主要应用于数据科学及机器学习领域）
